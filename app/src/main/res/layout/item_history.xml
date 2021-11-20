@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_histry"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/viewHistory"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+
+        android:layout_marginTop="12dp"
+        android:background="@drawable/shape_history"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tanggal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@id/viewHistory"
+        app:layout_constraintTop_toTopOf="@id/viewHistory"
+        tools:text="Tanggal 12-12-2021" />
+
+    <TextView
+        android:id="@+id/text55"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/sansbold"
+        android:text="Bright Gas 5,5 Kg"
+        android:textColor="@color/white"
+        android:textSize="23sp"
+        app:layout_constraintStart_toStartOf="@id/tanggal"
+        app:layout_constraintTop_toBottomOf="@id/tanggal" />
+
+
+    <Button
+        android:id="@+id/item_qty5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:focusable="false"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/text55"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/text55"
+        tools:text="x100" />
+
+    <TextView
+        android:id="@+id/text12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/sansbold"
+        android:text="Bright Gas 12 Kg"
+        android:textColor="@color/white"
+        android:textSize="23sp"
+        app:layout_constraintStart_toStartOf="@id/tanggal"
+        app:layout_constraintTop_toBottomOf="@id/text55" />
+
+    <Button
+        android:id="@+id/item_qty12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:focusable="false"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/text12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/text12"
+        tools:text="x100" />
+
+    <Button
+        android:id="@+id/confirm"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintStart_toStartOf="@id/viewHistory"
+        android:layout_marginStart="12dp"
+        android:backgroundTint="#AEEA00"
+        android:drawableLeft="@drawable/ic_check_circle_regular"
+        android:focusable="false"
+        android:textAlignment="center"
+        android:fontFamily="sans-serif-medium"
+        android:text=" Dikonfirmasi"
+        android:textColor="@color/black"
+
+        app:layout_constraintBottom_toBottomOf="@id/btn_detail"
+        app:layout_constraintEnd_toStartOf="@id/btn_detail"
+        app:layout_constraintTop_toTopOf="@id/btn_detail" />
+
+    <Button
+        android:id="@+id/nullConfirm"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="#FF9100"
+        android:drawableLeft="@drawable/ic_times_circle_regular"
+        android:focusable="false"
+android:visibility="gone"
+        android:fontFamily="sans-serif-medium"
+        android:text=" Belum Dikonfimasi"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/btn_detail"
+        app:layout_constraintEnd_toStartOf="@id/btn_detail"
+        app:layout_constraintStart_toStartOf="@id/viewHistory"
+        app:layout_constraintTop_toTopOf="@id/btn_detail" />
+
+    <Button
+        android:id="@+id/btn_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="#FFA000"
+        android:drawableLeft="@drawable/ic_file_alt_regular"
+        android:fontFamily="@font/regularsasn"
+        android:text="Detail"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_qty12" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

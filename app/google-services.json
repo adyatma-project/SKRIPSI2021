@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "967829482486",
+    "project_id": "skripsi-18c44",
+    "storage_bucket": "skripsi-18c44.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:967829482486:android:5a1848664475b30c8cb5d7",
+        "android_client_info": {
+          "package_name": "adyatma.untad.skripsi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "967829482486-bp9hesgfsv40st1hb6o88tq8n1t94p9f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "adyatma.untad.skripsi",
+            "certificate_hash": "4b5a878b8532909a91de354293feb09449fb1478"
+          }
+        },
+        {
+          "client_id": "967829482486-c02g4fbe9ige0egaq0a68b4tmn4ogv9f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYsq2SUOjsdp0k79CvBihIk8QtX6eXToM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "967829482486-c02g4fbe9ige0egaq0a68b4tmn4ogv9f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

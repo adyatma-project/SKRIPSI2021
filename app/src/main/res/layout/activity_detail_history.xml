@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".Views.OrderActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/ViewTop"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/shape_top"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/IconBack"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/ic_baseline_arrow_back_ios_new_24"
+            app:layout_constraintBottom_toBottomOf="@id/ViewTop"
+            app:layout_constraintStart_toStartOf="@id/ViewTop"
+            app:layout_constraintTop_toTopOf="@id/ViewTop" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/medium"
+            android:text="Detail Pemesanan"
+            android:textColor="@color/white"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@id/ViewTop"
+            app:layout_constraintEnd_toEndOf="@id/ViewTop"
+            app:layout_constraintStart_toEndOf="@id/IconBack"
+            app:layout_constraintTop_toTopOf="@id/ViewTop" />
+
+        <TextView
+            android:id="@+id/textalamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/regular"
+            android:text="Alamat Pengiriman"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@id/ViewTop"
+            app:layout_constraintTop_toBottomOf="@id/ViewTop" />
+
+
+        <TextView
+            android:id="@+id/alamatPengiriman"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/textalamat"
+            app:layout_constraintTop_toBottomOf="@id/textalamat"
+            tools:text="ADYATMA | (+62) 85213219361 \nBTN PENGAWU BLOK F3 NO.27 PALU TATANGA" />
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="8dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/alamatPengiriman" />
+
+        <TextView
+            android:id="@+id/textProduk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/regular"
+            android:text="Jenis Produk"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@id/ViewTop"
+            app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+        <TextView
+            android:id="@+id/text5kg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/black"
+            android:text="BRIGHT GAS 5,5 Kg"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@id/textProduk"
+            app:layout_constraintTop_toBottomOf="@id/textProduk" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textqty5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/text5kg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/text5kg"
+            app:layout_constraintTop_toTopOf="@id/text5kg">
+
+            <EditText
+                android:id="@+id/qty55"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="QTY"
+                android:focusable="false"
+                android:inputType="number"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/text12kg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/black"
+            android:text="BRIGHT GAS 12 Kg"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@id/textProduk"
+            app:layout_constraintTop_toBottomOf="@id/text5kg" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textqty12"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/text12kg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/textqty5"
+            app:layout_constraintTop_toTopOf="@id/text12kg">
+
+            <EditText
+                android:id="@+id/qty12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="QTY"
+                android:focusable="false"
+                android:inputType="number"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="12dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textqty12" />
+
+        <TextView
+            android:id="@+id/textMetode1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/black"
+            android:text="Metode Pembayaran"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/textMetode2"
+            app:layout_constraintStart_toStartOf="@id/textProduk"
+            app:layout_constraintTop_toTopOf="@id/textMetode2" />
+
+
+        <Button
+            android:id="@+id/textMetode2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/black"
+            android:text="COD (BAYAR DI TEMPAT)"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@id/divider3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/textMetode1"
+            app:layout_constraintTop_toBottomOf="@id/divider2" />
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="12dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textMetode2" />
+
+
+        <TextView
+            android:id="@+id/textSub5kg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/regularsasn"
+            android:text="Sub Total Bright Gas 5,5 Kg"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider3" />
+
+
+        <TextView
+            android:id="@+id/textSub12kg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/regularsasn"
+            android:text="Sub Total Bright Gas 12 Kg"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textSub5kg" />
+
+        <TextView
+            android:id="@+id/sub5Kg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/black"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/textSub5kg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/textSub5kg"
+            app:layout_constraintTop_toTopOf="@id/textSub5kg"
+            tools:text="Rp.10.000.000,00" />
+
+        <TextView
+            android:id="@+id/sub12Kg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/black"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/textSub12kg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/textSub12kg"
+            app:layout_constraintTop_toTopOf="@id/textSub12kg"
+            tools:text="Rp.10.000.000,00" />
+
+
+        <View
+            android:id="@+id/viewTotal"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="12dp"
+            android:background="#0091EA"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textSub12kg" />
+
+
+        <TextView
+            android:id="@+id/textTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Total Pembayaran"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_marginStart="5dp"
+         app:layout_constraintStart_toStartOf="@id/viewTotal"
+            app:layout_constraintTop_toTopOf="@+id/viewTotal" />
+
+        <TextView
+            android:id="@+id/totalPembayaran"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/regular"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+ android:layout_marginTop="8dp"
+            android:layout_marginStart="5dp"
+            app:layout_constraintStart_toStartOf="@+id/textTotal"
+            app:layout_constraintTop_toBottomOf="@+id/textTotal"
+            tools:text="Rp.12.000.000,00" />
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="5dp"
+            android:backgroundTint="#EF6C00"
+            android:text="BATALKAN ORDER"
+          android:visibility="gone"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/viewTotal"
+            app:layout_constraintEnd_toEndOf="@id/viewTotal"
+            app:layout_constraintTop_toTopOf="@id/viewTotal" />
+
+        <Button
+            android:id="@+id/btn_approve"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="5dp"
+            android:backgroundTint="#78EF00"
+            android:textColor="@color/black"
+            android:focusable="false"
+            android:visibility="gone"
+            android:drawableLeft="@drawable/ic_check_circle_regular"
+            android:text=" Dikonfirmasi"
+            android:fontFamily="@font/regular"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/viewTotal"
+            app:layout_constraintEnd_toEndOf="@id/viewTotal"
+            app:layout_constraintTop_toTopOf="@id/viewTotal" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
