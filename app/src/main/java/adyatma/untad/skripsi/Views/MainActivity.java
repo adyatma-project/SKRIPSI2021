@@ -150,6 +150,24 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+    public void navigatehelp(View v) {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
+        alertDialogBuilder
+                .setTitle("Bantuan")
+                .setMessage("Apabila anda mengalami kesulitan dalam penggunaan aplikasi, silahkan hubungi 085213219361 via Whatsapp")
+                .setCancelable(false)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                       dialog.cancel();
+                    }
+                });
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
+
+
+    }
+
     void cekData(String phone) {
         String url = BuildConfig.LINK_IMAGE + "/SKRIPSI/public/Android_check/information/?id=1" ;
         StringRequest stringRequest = new StringRequest(

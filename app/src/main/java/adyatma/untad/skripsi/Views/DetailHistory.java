@@ -1,6 +1,7 @@
 package adyatma.untad.skripsi.Views;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,8 +11,11 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -27,6 +31,8 @@ import org.json.JSONObject;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import adyatma.untad.skripsi.BuildConfig;
 import adyatma.untad.skripsi.databinding.ActivityDetailHistoryBinding;
@@ -38,7 +44,7 @@ public class DetailHistory extends AppCompatActivity {
     String getUid = "";
     FirebaseUser user;
     FirebaseAuth firebaseAuth;
-
+String id_order;
     String id_outlet = "";
     String order_55 = "";
     String order_12 = "";
@@ -84,7 +90,90 @@ public class DetailHistory extends AppCompatActivity {
             finish();
         });
 
+
+        activityDetailHistoryBinding.btnCancel.setOnClickListener(view -> {
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(DetailHistory.this);
+            alertDialogBuilder
+                    .setTitle("Konfirmasi")
+                    .setMessage("Apakah Anda Yakin Ingin Membatalkan Pesanan Ini ?")
+                    .setCancelable(false)
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+cancel();
+                        }
+                    });
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
+        });
+
 //        Toast.makeText(getApplicationContext(), getIntent().getStringExtra(EXTRA_ID_ORDER), Toast.LENGTH_SHORT).show();
+    }
+
+    private void cancel() {
+        String url = BuildConfig.LINK_IMAGE + "SKRIPSI/public/Android_tambah/cancel/Android/cancel/?id_order=" + getIntent().getStringExtra(EXTRA_ID_ORDER);
+        StringRequest stringRequest = new StringRequest(
+                Request.Method.GET,
+                url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            String status = jsonObject.getString("status");
+
+                            if (status.equals("Ok")) {
+                                AlertDialog.Builder builder = new AlertDialog.Builder(DetailHistory.this);
+                                builder.setTitle("Sukses");
+                                builder.setMessage("Order Berhasil Di Batalkan");
+                                builder.setPositiveButton("Oke",
+                                        new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialogInterface, int i) {
+                                                dialogInterface.dismiss();
+                                                Intent Main = new Intent(DetailHistory.this, MainActivity.class);
+                                                startActivity(Main);
+                                                finish();
+                                            }
+                                        });
+                                AlertDialog dialog = builder.create();
+                                dialog.show();
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(DetailHistory.this);
+                        builder.setTitle("Gagal");
+                        builder.setMessage("Data Gagal Dibatalkan \n"+error.getMessage());
+                        builder.setPositiveButton("Oke",
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        dialogInterface.dismiss();
+                                    }
+                                });
+                        AlertDialog dialog = builder.create();
+                        dialog.show();
+                    }
+                }
+        ) {
+            @Nullable
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> form = new HashMap<>();
+                form.put("complete_data", "YES");
+                return form;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+
     }
 
 
@@ -107,15 +196,14 @@ public class DetailHistory extends AppCompatActivity {
                                 order_55 = hasil.getString("order_55");
                                 order_12 = hasil.getString("order_12");
                                 alamat_order = hasil.getString("alamat_order");
-                                 konfirmasi = hasil.getString("konfirmasi");
+                                konfirmasi = hasil.getString("konfirmasi");
 
                                 activityDetailHistoryBinding.qty55.setText(order_55);
                                 activityDetailHistoryBinding.qty12.setText(order_12);
                                 activityDetailHistoryBinding.alamatPengiriman.setText(alamat_order);
-                                if (konfirmasi.equals("YA")){
+                                if (konfirmasi.equals("YA")) {
                                     activityDetailHistoryBinding.btnApprove.setVisibility(View.VISIBLE);
-                                }
-                                else if (konfirmasi.equals("TIDAK")){
+                                } else if (konfirmasi.equals("TIDAK")) {
                                     activityDetailHistoryBinding.btnCancel.setVisibility(View.VISIBLE);
                                 }
 

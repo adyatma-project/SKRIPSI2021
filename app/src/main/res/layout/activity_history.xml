@@ -33,7 +33,7 @@
         app:layout_constraintTop_toTopOf="@id/view_top"
         app:layout_constraintBottom_toBottomOf="@id/view_top"
         app:layout_constraintEnd_toEndOf="@id/view_top"
-        android:text="History Activity"
+        android:text="Halaman Riwayat"
         android:textSize="30dp"
         android:textColor="@color/white"
         android:fontFamily="@font/regularsasn"

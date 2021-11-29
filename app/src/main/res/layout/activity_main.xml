@@ -33,7 +33,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/regular"
-        android:text="Hallo"
+        android:text="Halo"
         android:textColor="@color/white"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="@id/view_top"
@@ -160,10 +160,22 @@
         android:layout_height="100dp"
         android:layout_marginTop="20dp"
         android:drawableTop="@drawable/ic_baseline_power_settings_new_24"
-        android:text="Logout"
+        android:text="Keluar"
         android:onClick="navigateLogOut"
         android:backgroundTint="#1E88E5"
         app:layout_constraintStart_toStartOf="@id/orderNow"
         app:layout_constraintTop_toBottomOf="@id/orderNow" />
+
+    <Button
+        android:id="@+id/help"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:backgroundTint="#8BD316"
+        android:drawableTop="@drawable/ic_question_solid"
+        android:onClick="navigatehelp"
+        android:text="Bantuan"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/Historycal"
+        app:layout_constraintTop_toBottomOf="@+id/Historycal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
